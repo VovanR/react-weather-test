@@ -12,8 +12,9 @@
   },
   "scripts": {
     "build": "npm run build:clean && npm run build:copy && webpack",
-    "build:clean": "rm -rf dist/*",
+    "build:clean": "rm -rf dist && mkdir dist",
     "build:copy": "cp ./src/index.html ./dist/",
+    "deploy": "gh-pages-deploy",
     "prepush": "npm test",
     "release-major": "mversion major",
     "release-minor": "mversion minor",
@@ -68,5 +69,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "dist"
+    ],
+    "noprompt": false
   }
 }
