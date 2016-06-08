@@ -1,8 +1,6 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var srcPath = path.join(__dirname, '/../src');
 var publicPath = '/assets/';
 
 module.exports = {
@@ -14,12 +12,7 @@ module.exports = {
 		publicPath: publicPath
 	},
 	devServer: {
-		contentBase: './src/',
-		// historyApiFallback: true,
-		// hot: true,
-		// port: port,
-		// publicPath: publicPath,
-		// noInfo: false
+		contentBase: './src/'
 	},
 	module: {
 		loaders: [
@@ -49,6 +42,6 @@ module.exports = {
 		extensions: ['', '.js', '.jsx']
 	},
 	plugins: [
-		new ExtractTextPlugin('style.css', { allChunks: true })
+		new ExtractTextPlugin('style.css', {allChunks: true})
 	]
 };

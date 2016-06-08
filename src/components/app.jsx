@@ -1,7 +1,7 @@
 import React from 'react';
 
-import styles from './App.css';
-import Item from './Item/Item.jsx';
+import styles from './app.css';
+import Item from './item/item.jsx';
 
 class App extends React.Component {
 	constructor(props) {
