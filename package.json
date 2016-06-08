@@ -63,7 +63,10 @@
     ]
   },
   "xo": {
-    "extends": "xo-react"
+    "extends": "xo-react",
+    "ignores": [
+      "assets/**"
+    ]
   },
   "config": {
     "commitizen": {
