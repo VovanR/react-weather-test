@@ -1,3 +1,14 @@
 language: node_js
 node_js:
   - v6
+branches:
+  only:
+    - master
+before_script:
+  - git config --global user.email "mail@vovanr.com"
+  - git config --global user.name "Travis CI"
+  - git remote rm origin
+  - git remote add origin https://vovanr:${GH_TOKEN}@github.com/vovanr/react-weather-test.git
+  - git fetch
+  - npm install gh-pages-deploy
+script: npm run deploy
