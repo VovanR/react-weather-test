@@ -11,13 +11,15 @@
     "url": "https://github.com/VovanR"
   },
   "scripts": {
+    "build": "npm run build:clean && npm run build:copy && webpack",
+    "build:clean": "rm -rf dist/*",
+    "build:copy": "cp ./src/index.html ./dist/",
     "prepush": "npm test",
-    "test": "xo",
-    "start": "webpack-dev-server",
-    "release-patch": "mversion patch",
-    "release-minor": "mversion minor",
     "release-major": "mversion major",
-    "build": "webpack"
+    "release-minor": "mversion minor",
+    "release-patch": "mversion patch",
+    "start": "webpack-dev-server",
+    "test": "xo"
   },
   "keywords": [
     "react",

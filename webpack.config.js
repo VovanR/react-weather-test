@@ -1,15 +1,13 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var publicPath = '/assets/';
-
 module.exports = {
 	entry: './src/index.jsx',
 	devtool: 'cheap-module-source-map',
 	output: {
 		filename: 'index.js',
-		path: path.join(__dirname, '/../dist/assets'),
-		publicPath: publicPath
+		publicPath: '/assets/',
+		path: path.resolve('./dist/assets')
 	},
 	devServer: {
 		contentBase: './src/'
