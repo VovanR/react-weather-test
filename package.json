@@ -78,6 +78,6 @@
     "prep": [
       "build"
     ],
-    "noprompt": false
+    "noprompt": true
   }
 }
