@@ -1,10 +1,45 @@
 .root {
-	border: 2px solid #777;
 	padding: 0 20px;
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 3vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: calc(100% / 12);
+	min-height: 1em;
 }
 
-.text {
-	color: #777;
-	font-size: 24px;
-	font-weight: 600;
+.time {
+	display: inline-block;
+	width: 2.5em;
+	padding-right: 1em;
+	font-weight: normal;
+	text-align: right;
+	color: rgba(0, 0, 0, 0.35);
+}
+
+.block {
+}
+
+.icon {
+	vertical-align: middle;
+	width: 2.1em;
+	height: auto;
+}
+
+.wind {
+}
+
+.param {
+	margin-left: 0.25em;
+}
+
+.root :global .param__units {
+	display: inline-block;
+	transition: opacity ease 0.35s;
+	opacity: 0;
+}
+
+.root:hover :global .param__units {
+	opacity: 0.5;
 }

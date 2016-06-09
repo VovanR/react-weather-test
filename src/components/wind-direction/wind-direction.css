@@ -1,0 +1,22 @@
+.root {
+	display: inline-block;
+	font-family: Monaco, 'Courier New', monospace;
+	font-size: 2.1em;
+	width: 1em;
+	height: 1em;
+	line-height: 1;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+
+	/* Circle */
+	background-color: #fff;
+	border: 2px dotted rgba(0, 0, 0, 0.15);
+	border-radius: 50%;
+}
+
+.root::after {
+	content: '↑';
+	display: block;
+	margin-top: -0.1em;
+}
