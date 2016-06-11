@@ -66,10 +66,11 @@ class App extends React.Component {
 function processData(data) {
 	return data.hourly_forecast.reduce((a, b) => {
 		a.push({
-			hour: b.FCTTIME.hour,
+			hour: parseInt(b.FCTTIME.hour, 10),
 			iconUrl: b.icon_url,
-			temp: b.temp.metric,
-			windDegree: b.wdir.degrees,
+			temp: parseInt(b.temp.metric, 10),
+			windDegree: parseInt(b.wdir.degrees, 10),
+			windDirection: b.wdir.dir,
 			windSpeed: kmphToMph(b.wspd.metric)
 		});
 
@@ -78,7 +79,7 @@ function processData(data) {
 }
 
 function kmphToMph(kmph) {
-	return (parseInt(kmph, 10) * 1000 / 3600).toFixed(1);
+	return Math.round(parseInt(kmph, 10) * 1000 / 3600);
 }
 
 export default App;

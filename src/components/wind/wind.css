@@ -24,9 +24,15 @@
 
 .direction {
 	display: inline-block;
-	vertical-align: super;
+	vertical-align: 0.5em;
 	margin-left: 0.1em;
 	opacity: 0.5;
 	font-size: 0.75em;
 	width: 2.2em;
+}
+
+.root :global .param {
+	vertical-align: -0.5em;
+	font-size: 0.75em;
+	margin-left: -2.2em;
 }
