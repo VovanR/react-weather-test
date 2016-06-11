@@ -3,6 +3,7 @@
 	font-family: helvetica, arial, sans-serif;
 	line-height: 1.2;
 	user-select: none;
+	cursor: default;
 	position: absolute;
 	top: 0;
 	right: 0;

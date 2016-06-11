@@ -3,8 +3,24 @@
 	vertical-align: middle;
 }
 
+.speed {
+}
+
+.speed :global .param__units {
+	vertical-align: -0.5em;
+	font-size: 0.75em;
+}
+
+.wind {
+	display: inline-block;
+	vertical-align: 0.5em;
+	margin-left: -2.2em;
+	font-size: 0.75em;
+}
+
 .degree {
 	display: inline-block;
+	opacity: 0.5;
 	font-family: Monaco, 'Courier New', monospace;
 	font-size: 2.1em;
 	width: 1em;
@@ -19,20 +35,11 @@
 	content: '➔';
 	transform: rotate(90deg);
 	display: block;
-	margin-top: -0.15em;
+	margin-left: -0.125em;
 }
 
-.direction {
+:global .wind__direction {
 	display: inline-block;
-	vertical-align: 0.5em;
-	margin-left: 0.1em;
-	opacity: 0.5;
-	font-size: 0.75em;
-	width: 2.2em;
-}
-
-.root :global .param {
-	vertical-align: -0.5em;
-	font-size: 0.75em;
-	margin-left: -2.2em;
+	width: 2.6em;
+	margin-left: -0.4em;
 }

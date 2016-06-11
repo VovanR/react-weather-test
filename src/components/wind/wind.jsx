@@ -13,21 +13,24 @@ class Wind extends React.Component {
 
 		return (
 			<span className={styles.root}>
-				<span
-					className={styles.degree}
-					style={{
-						transform: `rotate(${windDegree}deg)`
-					}}
-					/>
-
-				<span className={styles.direction}>
-					{windDirection}
-				</span>
-
 				<Param
+					className={styles.speed}
 					value={windSpeed}
 					units={'m/s'}
 					/>
+
+				<span className={styles.wind}>
+					<span
+						className={styles.degree}
+						style={{
+							transform: `rotate(${windDegree}deg)`
+						}}
+						/>
+
+					<span className="wind__direction">
+						{windDirection}
+					</span>
+				</span>
 			</span>
 		);
 	}
