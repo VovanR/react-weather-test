@@ -5,6 +5,7 @@ import React from 'react';
 import styles from './app.css';
 import Loading from './loading/loading.jsx';
 import Item from './item/item.jsx';
+import ApiCredits from './api-credits/api-credits.jsx';
 
 class App extends React.Component {
 	constructor() {
@@ -58,6 +59,7 @@ class App extends React.Component {
 							/>
 					);
 				})}
+				<ApiCredits/>
 			</div>
 		);
 	}
