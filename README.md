@@ -1,13 +1,16 @@
 # react-weather-test
 
+[![Build Status][travis-image]][travis-url]
 [![Commitizen friendly][commitizen-image]][commitizen-url]
 [![XO code style][codestyle-image]][codestyle-url]
-
-[![Build Status][travis-image]][travis-url]
 
 > React Weather test app
 
 Demo: [vovanr.github.io/react-weather-test][demo]
+
+## Build with
+- Icons: [Material icons](https://design.google.com/icons/)
+- Weather API: [Weather Underground](https://www.wunderground.com/)
 
 ## License
 MIT © [Vladimir Rodkin](https://github.com/VovanR)
