@@ -6,9 +6,12 @@
 	cursor: default;
 	position: absolute;
 	top: 0;
-	right: 0;
 	bottom: 0;
-	left: 0;
+	left: 50%;
+	width: 100%;
+	min-width: calc(100vh / 2);
+	max-width: calc(100vh / 1.4);
+	transform: translateX(-50%);
 }
 
 :global * {
