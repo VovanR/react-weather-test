@@ -1,5 +1,6 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
 	entry: './src/index.jsx',
@@ -13,33 +14,44 @@ module.exports = {
 		contentBase: './src/'
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				loader: 'babel-loader',
+				use: 'babel-loader',
 				exclude: /node_modules/
 			},
 			{
 				test: /\.css$/,
-				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								modules: true,
+								importLoaders: 1,
+								localIdentName: '[name]__[local]___[hash:base64:5]'
+							}
+						},
+						{
+							loader: 'postcss-loader',
+							options: {
+								plugins() {
+									return [
+										autoprefixer
+									]
+								}
+							}
+						}
+					]
+				})
 			}
 		]
 	},
-	postcss: function () {
-		return [
-			require('autoprefixer')({
-				browsers: ['last 2 versions']
-			})
-		];
-	},
-	externals: {
-		'react': 'React',
-		'react-dom': 'ReactDOM'
-	},
 	resolve: {
-		extensions: ['', '.js', '.jsx']
+		extensions: ['.js', '.jsx']
 	},
 	plugins: [
 		new ExtractTextPlugin('style.css', {allChunks: true})
 	]
-};
+}

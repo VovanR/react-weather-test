@@ -1,12 +1,22 @@
-import React from 'react';
+/* eslint react/forbid-component-props: 0 */
 
-import Wind from '../wind/wind.jsx';
-import Param from '../param/param.jsx';
-import styles from './item.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Wind from '../wind/wind.jsx'
+import Param from '../param/param.jsx'
+import styles from './item.css'
 
 class Item extends React.Component {
 	render() {
-		const {hour, iconUrl, temp, windDegree, windDirection, windSpeed} = this.props;
+		const {
+			hour,
+			iconUrl,
+			temp,
+			windDegree,
+			windDirection,
+			windSpeed
+		} = this.props
+		const formattedTemp = temp > 0 ? `+${temp}` : temp
 
 		return (
 			<div className={styles.root}>
@@ -19,31 +29,33 @@ class Item extends React.Component {
 						className={styles.icon}
 						src={iconUrl}
 						alt=""
-						/>
+					/>
 
 					<Param
 						className={styles.param}
-						value={temp > 0 ? `+${temp}` : temp}
-						units={'℃'}
-						/>
+						value={formattedTemp}
+						units="℃"
+					/>
 				</span>
 
 				<span className={styles.block}>
-					<Wind {...{windDegree, windDirection, windSpeed}}/>
+					<Wind
+						windDegree={windDegree}
+						windDirection={windDirection}
+						windSpeed={windSpeed}
+					/>
 				</span>
 			</div>
-		);
+		)
 	}
 }
 Item.propTypes = {
-	hour: React.PropTypes.number.isRequired,
-	iconUrl: React.PropTypes.string.isRequired,
-	temp: React.PropTypes.number.isRequired,
-	windDegree: React.PropTypes.number.isRequired,
-	windDirection: React.PropTypes.string.isRequired,
-	windSpeed: React.PropTypes.number.isRequired
-};
-Item.defaultProps = {
-};
+	hour: PropTypes.number.isRequired,
+	iconUrl: PropTypes.string.isRequired,
+	temp: PropTypes.number.isRequired,
+	windDegree: PropTypes.number.isRequired,
+	windDirection: PropTypes.string.isRequired,
+	windSpeed: PropTypes.number.isRequired
+}
 
-export default Item;
+export default Item
